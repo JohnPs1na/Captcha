@@ -8,13 +8,9 @@ const alphabet = ['x',...digits,...upper_alpha,...lower_alpha]
 var svgCaptcha = require('svg-captcha');
 const fs = require('fs')
 
-options = {
-    width:40,
-    height:40,
-}
 for (let i = 1;i<alphabet.length;i++){
 
-    x = svgCaptcha(alphabet[i],options)
+    x = svgCaptcha(alphabet[i])
     fs.writeFile(`./../captchas/svg_captcha/letters/${alphabet[i]}.txt`, x,(err) =>{
         if (err) throw err
     })
